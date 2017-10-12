@@ -20,15 +20,12 @@
 
             async function initServiceWorker() {
                 let reg = await navigator.serviceWorker.register('./sw.js');
-                console.log(2);
                 reg = await navigator.serviceWorker.ready;
-                console.log(3);
 
                 document.querySelector('#send-button').addEventListener('click', () => buttonHandler(reg));
             }
 
             if ('serviceWorker' in navigator) {
-                console.log(1);
                 initServiceWorker();
             }
     </script>
